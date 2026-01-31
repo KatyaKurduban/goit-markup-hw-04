@@ -95,12 +95,24 @@ img {
 }
 
 .nav-link {
-    display: block;
+    display: inline-block;
+    position: relative;
     padding: 24px 0;
     color: #2E2F42;
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.02em;
+}
+
+.nav-list .nav-link.active::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 4px;
+    background: #404BBF;
+    border-radius: 2px;
+    margin-top: 20px;
+    position: absolute;
 }
 
 .nav-link:hover,
@@ -127,12 +139,18 @@ img {
 .section-main {
     background-color: #2E2F42;
     padding: 188px 0;
+    background-repeat: no-repeat;
+    background-position: center, center;
+    background-size: cover;
+    background-origin: padding-box;
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(/images/hero-background.jpg);
 }
 
 .section-main .container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 1440px;
 }
 
 .title {
@@ -244,6 +262,7 @@ img {
 .team-list {
     display: flex;
     gap: 24px;
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 
 .team-list-item {
